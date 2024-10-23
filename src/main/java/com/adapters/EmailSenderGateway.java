@@ -1,5 +1,5 @@
 package com.adapters;
 
 public interface EmailSenderGateway {
-    void sendEmail(String to, String subject, String body)
+    void sendEmail(String to, String subject, String body);
 }

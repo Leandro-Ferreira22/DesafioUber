@@ -1,18 +1,23 @@
 package com.application;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.adapters.EmailSenderGateway;
+import com.core.EmailSenderUseCase;
+
 public class EmailSenderService implements EmailSenderUseCase{
 
-    private final EmailSenderGateway emailSenderGateway:
+    private final EmailSenderGateway emailSenderGateway;
 
     @Autowired
     public EmailSenderService(EmailSenderGateway emailgateway) {
-        this.emailSenderGateway = emailgateway
+        this.emailSenderGateway = emailgateway;
     }
 
 
     @Override
     public void sendEmail(String to, String subject, String body) {
-        this.emailSenderGateway.sendEmail(to, subject, body)
+        this.emailSenderGateway.sendEmail(to, subject, body);
     }
 
 }
